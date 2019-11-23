@@ -1,6 +1,6 @@
 {
   "name": "loggeru",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "File changes to recorded on BSV",
   "dependencies": {
     "bsv": "^1.0.0",
