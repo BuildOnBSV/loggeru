@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 Tail = require('tail').Tail;
 let bsv = require('bsv');
 const crypto = require('crypto');
@@ -20,7 +19,6 @@ function encrypt(text, password) {
     iv: iv.toString('hex')
   };
 }
-
 
 // function decrypt(content, password, myAuthTag, myIv) {
 //   var passwordf = Buffer.from(password, 'hex');

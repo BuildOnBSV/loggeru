@@ -1,4 +1,3 @@
-
 Tail = require('tail').Tail;
 let bsv = require('bsv');
 const crypto = require('crypto');
@@ -43,16 +42,16 @@ tail.on("line", function(myData) {
   if (re.test(myData)) {
     console.log(myData);
     if (encryption) {
-      try{
-      var encryptedObject = encrypt(myData, encryption);
-      var myData = encryptedObject.content;
-      var myAuthTag = encryptedObject.tag;
-      var myIv = encryptedObject.iv;
-      var metadata = '{"a":"' + myAuthTag.toString('hex') + '","i":"' + myIv.toString('hex') + '"}';
-    }catch{
-      console.log("Encryption failed. Maybe the key is not correct?");
-      var metadata = 0;
-    }
+      try {
+        var encryptedObject = encrypt(myData, encryption);
+        var myData = encryptedObject.content;
+        var myAuthTag = encryptedObject.tag;
+        var myIv = encryptedObject.iv;
+        var metadata = '{"a":"' + myAuthTag.toString('hex') + '","i":"' + myIv.toString('hex') + '"}';
+      } catch {
+        console.log("Encryption failed. Maybe the key is not correct?");
+        var metadata = 0;
+      }
       //console.log(decrypt(myData, encryption, myAuthTag, myIv));
     } else {
       var metadata = 0;
@@ -61,13 +60,14 @@ tail.on("line", function(myData) {
     var config = {
       safe: true,
       data: ["l", tag, file, regex, myData, metadata],
+      rpc: "https://bchsvexplorer.com",
       pay: {
         key: myprivateKey
       }
     }
     try {
       datapay.send(config, function(err, res) {
-        if (err){
+        if (err) {
           console.log('error');
           console.log(JSON.stringify(err));
           throw err;
