@@ -33,13 +33,13 @@ if (!args.k) {
   })
   return;
 } else if (!args.f) {
-  console.log("Missing file path. Pass with -f flag. Must be an absolute path.")
+  console.log(help)
   return;
 } else if (!args.t) {
-  console.log("Missing tag. Pass with -t flag.")
+  console.log(help)
   return;
 } else if (!args.r) {
-  console.log("Missing regex expression to match. Pass with -r flag.")
+  console.log(help)
   return;
 }
 if (!args.e) {
