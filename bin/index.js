@@ -5,8 +5,23 @@ const crypto = require('crypto');
 const bsv = require('bsv');
 const args = require('minimist')(process.argv.slice(2));
 
+var help = "\n"+
+      "Required flags:\n" +
+      "-f filePathToWatch\n" +
+      "-k bsvPrivateKey\n" +
+      "-t tagYourOrganization\n" +
+      "-r regexExpressionToMatch\n" +
+      "\n" +
+      "Optional flag:\n" +
+      "-e encryptionKey\n" +
+      "\n" +
+      "Please note:\n" +
+      "!! You must add BSV to the address before it will work. We don't store the private key so please so write it down. !!\n" +
+      "\n" +
+      "More detailed instructions available @ https://github.com/BuildOnBSV/loggeru\n"
 
 if (!args.k) {
+  console.log(help);
   let privateKey = bsv.PrivateKey.fromRandom()
   let publicKey = bsv.PublicKey.fromPrivateKey(privateKey)
   let address = bsv.Address.fromPublicKey(publicKey)
