@@ -1,5 +1,7 @@
-# Loggeru
 
+<p align="center">
+<img src="logo.png" alt="logo" width="500px">
+</p>    
 
 [![npm version](http://img.shields.io/npm/v/loggeru.svg?style=flat)](https://npmjs.org/package/loggeru "View this project on npm")
 
