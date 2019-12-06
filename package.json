@@ -1,16 +1,17 @@
 {
   "name": "loggeru",
-  "version": "1.0.12",
+  "version": "1.0.14",
   "description": "File changes to recorded on BSV",
   "dependencies": {
     "bsv": "^1.0.0",
+    "convert-array-to-csv": "^1.0.9",
     "datapay": "^0.0.18",
     "minimist": "^1.2.0",
     "pm2": "^4.1.2",
     "tail": "^2.0.3"
   },
   "repository": "BuildOnBSV/loggeru",
-  "license":"MIT",
+  "license": "ISC",
   "bin": {
     "loggeru": "bin/index.js",
     "loggeru-run": "bin/server.js"
@@ -20,6 +21,5 @@
     "run": "node server.js"
   },
   "preferGlobal": "true",
-  "author": "",
-  "license": "ISC"
+  "author": ""
 }

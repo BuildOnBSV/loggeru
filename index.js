@@ -15,9 +15,11 @@ var help = "\n"+
       "-e encryptionKey\n" +
       "\n" +
       "Please note:\n" +
-      "!! You must add BSV to the address before it will work. We don't store the private key so please so write it down. !!\n" +
+      "!! You must add BSV to the address before it will work. We don't store the address or private key so please so write it down. !!\n" +
       "\n" +
       "More detailed instructions available @ https://github.com/BuildOnBSV/loggeru\n"
+      "\n" +
+      "Use npm install -g loggeru for decryption capabilities\n"
 
 if (!args.k) {
   console.log(help);

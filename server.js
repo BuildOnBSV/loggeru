@@ -60,7 +60,7 @@ tail.on("line", function(myData) {
     var config = {
       safe: true,
       data: ["l", tag, file, regex, myData, metadata],
-      rpc: "https://bchsvexplorer.com",
+//      rpc: "https://bchsvexplorer.com",
       pay: {
         key: myprivateKey
       }
